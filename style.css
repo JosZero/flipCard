@@ -1,0 +1,47 @@
+body {
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      margin: 0;
+}
+.cards {
+      display: flex;
+      gap: 5px;
+}
+.cards .flip-card {
+      background-color: transparent;
+      width: 300px;
+      height: 300px;
+      border: 1px solid #f1f1f1;
+      /* ver estilo css perspective modelado 3d*/
+      perspective: 1000px;
+}
+.cards .flip-card .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 1s ease-in-out;
+      transform-style: preserve-3d;
+}
+.cards .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+}
+.cards .flip-card .flip-card-front,
+.cards .flip-card .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+}
+
+.cards .flip-card .flip-card-front {
+      background-color: rgb(10, 11, 83);
+      color: black;
+            
+
+}
+
+.cards .flip-card .flip-card-back {
+      background-color: blueviolet;
+      color: white;
+      transform: rotateY(180deg);
+}
